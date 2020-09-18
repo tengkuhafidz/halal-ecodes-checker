@@ -19,6 +19,7 @@
     "@fortawesome/fontawesome-free": "^5.14.0",
     "fuse.js": "^6.4.1",
     "gatsby": "^2.21.0",
+    "gatsby-plugin-google-gtag": "^2.1.11",
     "gatsby-plugin-manifest": "^2.4.1",
     "gatsby-plugin-offline": "^3.2.0",
     "gatsby-plugin-postcss": "^2.3.0",

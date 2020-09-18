@@ -36,5 +36,17 @@ module.exports = {
         cellRange: 'A1:E1000',
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: [process.env.GATSBY_GA_TRACKING_ID],
+        gtagConfig: {
+          anonymize_ip: true,
+        },
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
   ],
 }
