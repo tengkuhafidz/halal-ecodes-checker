@@ -4,9 +4,11 @@ import SEO from '../components/seo'
 import Main from '../components/main'
 import { EcodeData } from '../utils/models'
 import BackToTop from '../components/back-to-top'
+import BottomCta from '../components/bottom-cta'
 
 const Home = ({ data }) => {
   const ecodesData: EcodeData[] = data.allEcodesSheetsData.nodes
+
   const renderBackToTop = () => {
     if (typeof window !== 'undefined') {
       return <BackToTop />
