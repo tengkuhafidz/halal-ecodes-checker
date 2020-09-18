@@ -21,9 +21,9 @@ const Home = ({ data }) => {
       <div className="max-w-6xl mx-auto py-12 px-4">
         <h1 className="text-4xl font-semibold text-center">Additive Halal Check</h1>
         <Main ecodesData={ecodesData} />
-        <Footer />  
+        <Footer />
       </div>
-      { renderBackToTop() }
+      {renderBackToTop()}
     </div>
   )
 }

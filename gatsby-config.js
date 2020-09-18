@@ -28,13 +28,13 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-source-google-sheets-flexible",
+      resolve: 'gatsby-source-google-sheets-flexible',
       options: {
-          apiKey: process.env.GATSBY_GOOGLE_CREDENTIALS,
-          spreadsheetUrl: process.env.GATSBY_SHEET_URL,
-          tabName: "ecodes",
-          cellRange: "A1:E1000",
+        apiKey: process.env.GATSBY_GOOGLE_CREDENTIALS,
+        spreadsheetUrl: process.env.GATSBY_SHEET_URL,
+        tabName: 'ecodes',
+        cellRange: 'A1:E1000',
       },
-  },
+    },
   ],
 }
