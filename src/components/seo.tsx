@@ -49,7 +49,7 @@ const SEO: React.FC<Props> = ({ title, description, image, twitterCard }) => {
           data-name="BMC-Widget"
           src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
           data-id="tengkubros"
-          data-description="Fuel my creation by buying me a coffee!"
+          data-description="Fuel our creation by buying us a coffee!"
           data-message="Find this site helpful? Contribute to our development!"
           data-color="#000"
           data-position="left"
