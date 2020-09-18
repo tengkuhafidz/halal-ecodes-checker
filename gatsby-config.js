@@ -5,10 +5,10 @@ module.exports = {
     title: 'Halal ECodes Checker',
     titleTemplate: '%s',
     description: 'A list of ECodes/additives with their details and halal status',
-    author: 'Fidz.Dev',
-    url: 'https://fidz.dev', // No trailing slash allowed!
+    author: 'tengkubros',
+    url: 'https://buymeacoffee.com/tengkubros', // No trailing slash allowed!
     image: '/app-banner.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: 'sohafidz',
+    twitterUsername: 'tengkubros',
   },
   plugins: [
     `gatsby-plugin-postcss`,
