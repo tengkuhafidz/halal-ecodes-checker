@@ -3,9 +3,15 @@ import React from 'react'
 import SEO from '../components/seo'
 import Main from '../components/main'
 import { EcodeData } from '../utils/models'
+import BackToTop from '../components/back-to-top'
 
 const Home = ({ data }) => {
   const ecodesData: EcodeData[] = data.allEcodesSheetsData.nodes
+  const renderBackToTop = () => {
+    if (typeof window !== 'undefined') {
+      return <BackToTop />
+    }
+  }
 
   return (
     <div className="bg-gray-100 min-h-screen text-gray-800">
@@ -14,6 +20,7 @@ const Home = ({ data }) => {
         <h1 className="text-4xl font-semibold text-center">Additive Halal Check</h1>
         <Main ecodesData={ecodesData} />
       </div>
+      { renderBackToTop() }
     </div>
   )
 }

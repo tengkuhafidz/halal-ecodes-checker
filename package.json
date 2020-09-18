@@ -16,6 +16,7 @@
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
     "fuse.js": "^6.4.1",
     "gatsby": "^2.21.0",
     "gatsby-plugin-manifest": "^2.4.1",
