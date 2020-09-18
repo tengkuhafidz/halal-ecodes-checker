@@ -1,10 +1,10 @@
 import { graphql } from 'gatsby'
 import React from 'react'
-import SEO from '../components/seo'
-import Main from '../components/main'
-import { EcodeData } from '../utils/models'
 import BackToTop from '../components/back-to-top'
-import BottomCta from '../components/bottom-cta'
+import Footer from '../components/footer'
+import Main from '../components/main'
+import SEO from '../components/seo'
+import { EcodeData } from '../utils/models'
 
 const Home = ({ data }) => {
   const ecodesData: EcodeData[] = data.allEcodesSheetsData.nodes
@@ -21,6 +21,7 @@ const Home = ({ data }) => {
       <div className="max-w-6xl mx-auto py-12 px-4">
         <h1 className="text-4xl font-semibold text-center">Additive Halal Check</h1>
         <Main ecodesData={ecodesData} />
+        <Footer />  
       </div>
       { renderBackToTop() }
     </div>
