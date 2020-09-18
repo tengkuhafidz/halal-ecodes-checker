@@ -1,3 +1,4 @@
+require('dotenv').config()
 /* eslint-disable @typescript-eslint/camelcase */
 module.exports = {
   siteMetadata: {
@@ -29,8 +30,8 @@ module.exports = {
     {
       resolve: "gatsby-source-google-sheets-flexible",
       options: {
-          apiKey: "AIzaSyCQQlbvNPEp21LLRsA_S0-X5R2aRFXph-o",
-          spreadsheetUrl: "https://docs.google.com/spreadsheets/d/1FaCByoyYMsWg25aaeHMyBsAW3oRpZa27SkjCQeYYwuE/edit#gid=0",
+          apiKey: process.env.GATSBY_GOOGLE_CREDENTIALS,
+          spreadsheetUrl: process.env.GATSBY_SHEET_URL,
           tabName: "ecodes",
           cellRange: "A1:E1000",
       },
