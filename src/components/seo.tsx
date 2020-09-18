@@ -51,7 +51,7 @@ const SEO: React.FC<Props> = ({ title, description, image, twitterCard }) => {
           data-id="tengkubros"
           data-description="Fuel my creation by buying me a coffee!"
           data-message="Find this site helpful? Contribute to our development!"
-          data-color="#FF813F"
+          data-color="#000"
           data-position="left"
           data-x_margin="18"
           data-y_margin="18"
