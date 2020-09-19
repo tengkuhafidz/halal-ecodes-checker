@@ -44,19 +44,20 @@ const SEO: React.FC<Props> = ({ title, description, image, twitterCard }) => {
   return (
     <div>
       <Helmet title={metaTitle} titleTemplate={titleTemplate}>
-        <meta name="title" content={metaTitle} />
-        <meta name="description" content={metaDescription} />
-        <meta name="image" content={metaImage} />
-        <meta property="og:title" content={metaTitle} />
+        <meta name="title" content="Additive Halal Check" />
+        <meta name="description" content="A list of ECodes/additives with their details and halal status" />
+
         <meta property="og:type" content="website" />
-        <meta property="og:description" content={metaDescription} />
-        <meta property="og:image" content={metaImage} />
-        <meta property="og:url" content={url} />
-        <meta property="twitter:title" content={metaTitle} />
-        <meta property="twitter:description" content={metaDescription} />
-        <meta property="twitter:image" content={metaImage} />
-        <meta property="twitter:card" content={metaTwitterCard} />
-        <meta property="twitter:creator" content={twitterUsername} />
+        <meta property="og:url" content="https://ecodehalalcheck.com/" />
+        <meta property="og:title" content="Additive Halal Check" />
+        <meta property="og:description" content="A list of ECodes/additives with their details and halal status" />
+        <meta property="og:image" content="/app-banner.png" />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://ecodehalalcheck.com/" />
+        <meta property="twitter:title" content="Additive Halal Check" />
+        <meta property="twitter:description" content="A list of ECodes/additives with their details and halal status" />
+        <meta property="twitter:image" content="/app-banner.png" />
       </Helmet>
     </div>
   )
