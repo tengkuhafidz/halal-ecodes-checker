@@ -38,7 +38,8 @@ const Main: React.FC<Props> = ({ ecodesData }) => {
       const fuseSearchResults = getFuseSearchResult(ecodesData, term)
       allResults.push(...fuseSearchResults)
     })
-    return allResults
+    const uniqueResults = allResults.filter((v, i, a) => a.findIndex((t) => t.id === v.id) === i)
+    return uniqueResults
   }
 
   const filteredEcodesData = searchString ? getSearchResults(ecodesData, searchString) : ecodesData
