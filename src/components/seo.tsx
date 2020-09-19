@@ -56,18 +56,6 @@ const SEO: React.FC<Props> = ({ title, description, image, twitterCard }) => {
         <meta name="twitter:title" content={metaTitle} />
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={metaImage} />
-        <script
-          defer
-          data-name="BMC-Widget"
-          src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
-          data-id="tengkubros"
-          data-description="Looking for a way to thank the web creators? Treat them to a cup of coffee!"
-          data-message="Looking for a way to thank the web creators? Treat them to a cup of coffee!"
-          data-color="#000"
-          data-position="left"
-          data-x_margin="18"
-          data-y_margin="18"
-        />
       </Helmet>
     </div>
   )
