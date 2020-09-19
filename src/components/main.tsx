@@ -61,11 +61,11 @@ const Main: React.FC<Props> = ({ ecodesData }) => {
           <input
             className="inline-block bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-1 px-2 w-3/4 appearance-none leading-normal"
             type="text"
-            placeholder="100 201 (without the prefix `e`)"
+            placeholder="100 (without the prefix `e`)"
             onChange={(e) => handleSearch(e)}
           />
         </div>
-        <p className="mt-2 text-gray-800 text-sm">Supports multiple ecodes by spacing. e.g. 100 104</p>
+        <p className="mt-2 text-gray-800 text-sm">Search for multiple ecodes by spacing. e.g. 100 104</p>
         <p className="mt-2 text-gray-600 text-xs">
           Information from{' '}
           <a
