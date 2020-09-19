@@ -47,16 +47,16 @@ const SEO: React.FC<Props> = ({ title, description, image, twitterCard }) => {
         <meta name="title" content={metaTitle} />
         <meta name="description" content={metaDescription} />
         <meta name="image" content={metaImage} />
-        <meta name="og:title" content={metaTitle} />
-        <meta name="og:type" content="website" />
-        <meta name="og:description" content={metaDescription} />
-        <meta name="og:image" content={metaImage} />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:image" content={metaImage} />
         <meta property="og:url" content={url} />
-        <meta name="twitter:title" content={metaTitle} />
-        <meta name="twitter:description" content={metaDescription} />
-        <meta name="twitter:image" content={metaImage} />
-        <meta name="twitter:card" content={metaTwitterCard} />
-        <meta name="twitter:creator" content={twitterUsername} />
+        <meta property="twitter:title" content={metaTitle} />
+        <meta property="twitter:description" content={metaDescription} />
+        <meta property="twitter:image" content={metaImage} />
+        <meta property="twitter:card" content={metaTwitterCard} />
+        <meta property="twitter:creator" content={twitterUsername} />
       </Helmet>
     </div>
   )
