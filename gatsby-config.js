@@ -2,11 +2,11 @@ require('dotenv').config()
 /* eslint-disable @typescript-eslint/camelcase */
 module.exports = {
   siteMetadata: {
-    title: 'Halal ECodes Checker',
+    title: 'ECodes Halal Check',
     titleTemplate: '%s',
     description: 'A list of ECodes/additives with their details and halal status',
     author: 'tengkubros',
-    url: 'https://buymeacoffee.com/tengkubros', // No trailing slash allowed!
+    url: 'https://ecodehalalcheck.com', // No trailing slash allowed!
     image: '/app-banner.png', // Path to your image you placed in the 'static' folder
     twitterUsername: 'tengkubros',
   },

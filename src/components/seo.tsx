@@ -43,7 +43,7 @@ const SEO: React.FC<Props> = ({ title, description, image, twitterCard }) => {
 
   return (
     <div>
-      <Helmet title={metaTitle} titleTemplate={titleTemplate}>
+      <Helmet titleTemplate={titleTemplate}>
         <script
           defer
           data-name="BMC-Widget"
@@ -56,6 +56,7 @@ const SEO: React.FC<Props> = ({ title, description, image, twitterCard }) => {
           data-x_margin="18"
           data-y_margin="18"
         />
+        <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
         <meta name="image" content={metaImage} />
         <meta name="og:title" content={metaTitle} />
