@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Main: React.FC<Props> = ({ ecodesData }) => {
-  const [searchTerm, setSearchTerm] = useState('')
+  const [searchString, setSearchString] = useState('')
 
   const getFuseSearchResult = (ecodesData: EcodeData[], searchTerm: string): EcodeData[] => {
     const options = {
@@ -30,7 +30,18 @@ const Main: React.FC<Props> = ({ ecodesData }) => {
     return fuseSearchResult.map((result) => result.item)
   }
 
-  const filteredEcodesData = searchTerm ? getFuseSearchResult(ecodesData, searchTerm) : ecodesData
+  const getSearchResults = (ecodesData: EcodeData[], searchString: string) => {
+    const searchTerms: string[] = searchString.split(' ')
+
+    const allResults: EcodeData[] = []
+    searchTerms.forEach((term) => {
+      const fuseSearchResults = getFuseSearchResult(ecodesData, term)
+      allResults.push(...fuseSearchResults)
+    })
+    return allResults
+  }
+
+  const filteredEcodesData = searchString ? getSearchResults(ecodesData, searchString) : ecodesData
 
   const renderEcodes = () => {
     return filteredEcodesData.map((ecodeData) => <EcodeCard ecodeData={ecodeData} key={ecodeData.id} />)
@@ -38,7 +49,7 @@ const Main: React.FC<Props> = ({ ecodesData }) => {
 
   const handleSearch = (e) => {
     const searchTerm = e.target.value
-    setSearchTerm(searchTerm)
+    setSearchString(searchTerm)
   }
 
   return (
