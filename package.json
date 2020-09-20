@@ -17,7 +17,6 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",
-    "@types/react-helmet": "^6.1.0",
     "fuse.js": "^6.4.1",
     "gatsby": "^2.21.0",
     "gatsby-plugin-google-gtag": "^2.1.11",
@@ -35,6 +34,7 @@
     "typescript": "^3.8.3"
   },
   "devDependencies": {
+    "@types/react-helmet": "^6.1.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^10.4.9",
     "@types/jest": "^26.0.10",
