@@ -9,7 +9,7 @@ import useGoogleVision from '../hooks/useGoogleVision'
 
 import ActionSheet from './shared/action-sheet'
 
-const reECode = /(E|e)\d{3}/g
+const reECode = /^(E|e)\d{3}[0-9a-zA-Z]?$/g
 
 interface ECodeScannerProps {
   apiKey: string

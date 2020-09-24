@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import Fuse from 'fuse.js'
-
 import { EcodeData } from '../utils/models'
-
-import EcodeCard from './ecodeCard'
 import EcodeScanner from './ecode-scanner'
+import EcodeCard from './ecodeCard'
 
 interface Props {
   ecodesData: EcodeData[]
