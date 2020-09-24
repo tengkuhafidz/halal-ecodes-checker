@@ -2,6 +2,8 @@
 
 A simple page that lists ecodes with their details and halal status.
 
+See: https://ecodehalalcheck.com
+
 ## Getting Started 🚀
 
 1. Run `yarn install` to download dependencies

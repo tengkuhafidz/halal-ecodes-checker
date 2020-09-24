@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
 import Fuse from 'fuse.js'
-import EcodeCard from './ecodeCard'
-import { EcodeData } from '../utils/models'
-import Camera, { FACING_MODES } from 'react-html5-camera-photo'
-import Tesseract from 'tesseract.js'
 
-import 'react-html5-camera-photo/build/css/index.css'
+import { EcodeData } from '../utils/models'
+
+import EcodeCard from './ecodeCard'
+import EcodeScanner from './ecode-scanner'
 
 interface Props {
   ecodesData: EcodeData[]
 }
+
+const googleVisionApiKey = 'AIzaSyCSQLMKVMmGUA2MsIYyrwHpxNsk3AER1Bw' // TODO: move api key to config
 
 const Main: React.FC<Props> = ({ ecodesData }) => {
   const [searchString, setSearchString] = useState('')
@@ -58,49 +59,15 @@ const Main: React.FC<Props> = ({ ecodesData }) => {
     setSearchString(ecodesWithoutPrefixE.join(' '))
   }
 
-  const handleTakePhoto = (dataUri) => {
-    Tesseract.recognize(dataUri, 'eng', { logger: (m) => console.log(m) }).then(({ data: { text } }) => {
-      const wordsDetected = text.split(' ')
-
-      if (!!wordsDetected && wordsDetected.length > 0) {
-        const trimmedWords = wordsDetected.map((word) => word.trim())
-
-        const ecodesDetected = trimmedWords.filter((word) => /^[eE]\d{3}[0-9a-zA-Z]?$/.test(word))
-        if (!!ecodesDetected && ecodesDetected.length > 0) {
-          searchDetectedEcodes(ecodesDetected)
-        }
-      }
-      setCameraOn(false)
-    })
-  }
-
   const handleSearch = (e) => {
     const searchString = e.target.value
     setSearchString(searchString)
-  }
-
-  const renderCamera = () => {
-    if (cameraOn) {
-      return (
-        <div className="mb-4 max-w-sm">
-          <Camera
-            isImageMirror={false}
-            idealFacingMode={FACING_MODES.ENVIRONMENT}
-            onTakePhoto={(dataUri) => {
-              handleTakePhoto(dataUri)
-            }}
-          />
-        </div>
-      )
-    }
-    return <></>
   }
 
   return (
     <div>
       <div className="max-w-md mx-auto mt-8 mb-16 text-center">
         <div>
-          {renderCamera()}
           <label className="inline-block font-bold text-lg mr-1">e</label>
           <input
             className="inline-block bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded-lg py-1 px-2 w-3/4 appearance-none leading-normal"
@@ -109,8 +76,8 @@ const Main: React.FC<Props> = ({ ecodesData }) => {
             onChange={(e) => handleSearch(e)}
             value={searchString}
           />
-          <button className="ml-1 p-1 px-3 bg-gray-400 rounded" onClick={() => setCameraOn((prevValue) => !prevValue)}>
-            <i className={cameraOn ? 'fas fa-times' : 'fa fa-camera'}></i>
+          <button className="ml-1 p-1 px-3 bg-gray-400 rounded" onClick={() => setCameraOn(true)}>
+            <i className={'fa fa-camera'}></i>
           </button>
         </div>
         <p className="mt-2 text-gray-800 text-sm">Search for multiple ecodes by spacing. e.g. 100 104</p>
@@ -125,6 +92,18 @@ const Main: React.FC<Props> = ({ ecodesData }) => {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">{renderEcodes()}</div>
+
+      <div>
+        <EcodeScanner
+          className="max-w-xl mx-auto"
+          apiKey={googleVisionApiKey}
+          open={cameraOn}
+          onClose={() => {
+            setCameraOn(false)
+          }}
+          onChange={searchDetectedEcodes}
+        />
+      </div>
     </div>
   )
 }
