@@ -27,7 +27,7 @@ const styles = {
 
 const transitionDuration = 500
 
-export default function ActionSheet({ className = '', zIndex = 100, onClose = () => {}, height, open, children }) {
+export default function ActionSheet({ className = '', zIndex = 100, onClose, height, open, children }) {
   const [closed, setClosed] = useState(true)
 
   const draggingRef = useRef(false)

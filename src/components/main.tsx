@@ -10,8 +10,6 @@ interface Props {
   ecodesData: EcodeData[]
 }
 
-const googleVisionApiKey = 'AIzaSyCSQLMKVMmGUA2MsIYyrwHpxNsk3AER1Bw' // TODO: move api key to config
-
 const Main: React.FC<Props> = ({ ecodesData }) => {
   const [searchString, setSearchString] = useState('')
   const [cameraOn, setCameraOn] = useState(false)
@@ -96,7 +94,7 @@ const Main: React.FC<Props> = ({ ecodesData }) => {
       <div>
         <EcodeScanner
           className="max-w-xl mx-auto"
-          apiKey={googleVisionApiKey}
+          apiKey={process.env.GATSBY_GOOGLE_CREDENTIALS}
           open={cameraOn}
           onClose={() => {
             setCameraOn(false)
