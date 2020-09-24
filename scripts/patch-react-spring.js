@@ -1,7 +1,7 @@
 // Patch react-spring issue that only happens in production build.
 // Github issue: https://github.com/react-spring/react-spring/issues/1078
 
-import * as replace from 'replace-in-file'
+import replace from 'replace-in-file'
 
 const removeAllSideEffectsFalseFromReactSpringPackages = async () => {
   try {
