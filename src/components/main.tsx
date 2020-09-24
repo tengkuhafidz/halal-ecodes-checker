@@ -4,7 +4,6 @@ import EcodeCard from './ecodeCard'
 import { EcodeData } from '../utils/models'
 import Camera, { FACING_MODES } from 'react-html5-camera-photo'
 import Tesseract from 'tesseract.js'
-import { isMobile } from 'react-device-detect'
 
 import 'react-html5-camera-photo/build/css/index.css'
 
@@ -83,11 +82,10 @@ const Main: React.FC<Props> = ({ ecodesData }) => {
   const renderCamera = () => {
     if (cameraOn) {
       return (
-        <div className="mb-4 mx-w-sm">
+        <div className="mb-4 max-w-sm">
           <Camera
             isImageMirror={false}
             idealFacingMode={FACING_MODES.ENVIRONMENT}
-            isFullscreen={isMobile}
             onTakePhoto={(dataUri) => {
               handleTakePhoto(dataUri)
             }}

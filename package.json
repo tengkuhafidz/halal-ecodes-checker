@@ -29,7 +29,6 @@
     "gatsby-source-google-sheets-flexible": "^1.0.3",
     "lint-staged": "^10.2.2",
     "react": "^16.13.1",
-    "react-device-detect": "^1.13.1",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
     "react-html5-camera-photo": "^1.5.4",
