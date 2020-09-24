@@ -91,18 +91,19 @@ const Main: React.FC<Props> = ({ ecodesData }) => {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">{renderEcodes()}</div>
-
-      <div>
-        <EcodeScanner
-          className="max-w-xl mx-auto"
-          apiKey={process.env.GATSBY_GOOGLE_CREDENTIALS}
-          open={cameraOn}
-          onClose={() => {
-            setCameraOn(false)
-          }}
-          onChange={searchDetectedEcodes}
-        />
-      </div>
+      {isMobile && (
+        <div>
+          <EcodeScanner
+            className="max-w-xl mx-auto"
+            apiKey={process.env.GATSBY_GOOGLE_CREDENTIALS}
+            open={cameraOn}
+            onClose={() => {
+              setCameraOn(false)
+            }}
+            onChange={searchDetectedEcodes}
+          />
+        </div>
+      )}
     </div>
   )
 }
