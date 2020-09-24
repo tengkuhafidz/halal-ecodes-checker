@@ -1,7 +1,8 @@
 // Patch react-spring issue that only happens in production build.
 // Github issue: https://github.com/react-spring/react-spring/issues/1078
 
-import replace from 'replace-in-file'
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const replace = require('replace-in-file')
 
 const removeAllSideEffectsFalseFromReactSpringPackages = async () => {
   try {
