@@ -83,7 +83,7 @@ const Main: React.FC<Props> = ({ ecodesData }) => {
   const renderCamera = () => {
     if (cameraOn) {
       return (
-        <div className="mb-4">
+        <div className="mb-4 mx-w-sm">
           <Camera
             isImageMirror={false}
             idealFacingMode={FACING_MODES.ENVIRONMENT}
