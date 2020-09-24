@@ -13,7 +13,8 @@
     "clean": "gatsby clean",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "postinstall": "node scripts/patch-react-spring.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",
@@ -28,10 +29,14 @@
     "gatsby-plugin-typescript": "^2.4.0",
     "gatsby-source-google-sheets-flexible": "^1.0.3",
     "lint-staged": "^10.2.2",
+    "lodash": "^4.17.20",
     "react": "^16.13.1",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
     "react-html5-camera-photo": "^1.5.4",
+    "react-icons": "^3.11.0",
+    "react-spring": "^9.0.0-rc.3",
+    "react-use-gesture": "^8.0.0-alpha.6",
     "tesseract.js": "^2.1.3",
     "typescript": "^3.8.3"
   },
@@ -55,6 +60,7 @@
     "jest": "^26.4.2",
     "prettier": "^2.0.5",
     "react-test-renderer": "^16.13.1",
+    "replace-in-file": "^6.1.0",
     "tailwindcss": "^1.4.4"
   },
   "repository": {
