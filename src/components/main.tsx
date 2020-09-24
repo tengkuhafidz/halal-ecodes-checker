@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import Fuse from 'fuse.js'
 import EcodeCard from './ecodeCard'
 import { EcodeData } from '../utils/models'
-import Camera from 'react-html5-camera-photo'
+import Camera, { FACING_MODES } from 'react-html5-camera-photo'
 import Tesseract from 'tesseract.js'
+import { isMobile } from 'react-device-detect'
+
 import 'react-html5-camera-photo/build/css/index.css'
 
 interface Props {
@@ -84,6 +86,8 @@ const Main: React.FC<Props> = ({ ecodesData }) => {
         <div className="mb-4">
           <Camera
             isImageMirror={false}
+            idealFacingMode={FACING_MODES.ENVIRONMENT}
+            isFullscreen={isMobile}
             onTakePhoto={(dataUri) => {
               handleTakePhoto(dataUri)
             }}
