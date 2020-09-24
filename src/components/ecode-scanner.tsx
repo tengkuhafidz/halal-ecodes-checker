@@ -1,7 +1,7 @@
 import 'react-html5-camera-photo/build/css/index.css'
 
-import React, { useState, useRef, useEffect } from 'react'
-import { AiOutlineClose, AiFillCamera, AiOutlineReload } from 'react-icons/ai'
+import React, { useState, useEffect } from 'react'
+import { AiOutlineClose } from 'react-icons/ai'
 import { CgSpinner } from 'react-icons/cg'
 import Camera, { FACING_MODES } from 'react-html5-camera-photo'
 
