@@ -3,6 +3,7 @@ import Fuse from 'fuse.js'
 import { EcodeData } from '../utils/models'
 import EcodeScanner from './ecode-scanner'
 import EcodeCard from './ecodeCard'
+import { isMobile } from 'react-device-detect'
 
 interface Props {
   ecodesData: EcodeData[]
@@ -72,9 +73,11 @@ const Main: React.FC<Props> = ({ ecodesData }) => {
             onChange={(e) => handleSearch(e)}
             value={searchString}
           />
-          <button className="ml-1 p-1 px-3 bg-gray-400 rounded" onClick={() => setCameraOn(true)}>
-            <i className={'fa fa-camera'}></i>
-          </button>
+          {isMobile && (
+            <button className="ml-1 p-1 px-3 bg-gray-400 rounded" onClick={() => setCameraOn(true)}>
+              <i className={'fa fa-camera'}></i>
+            </button>
+          )}
         </div>
         <p className="mt-2 text-gray-800 text-sm">Search for multiple ecodes by spacing. e.g. 100 104</p>
         <p className="mt-2 text-gray-600 text-xs">
