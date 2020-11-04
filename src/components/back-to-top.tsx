@@ -25,7 +25,7 @@ const BackToTop: React.FC<{}> = () => {
   return (
     <div
       onClick={scrollToTop}
-      className={`transition-opacity fixed bottom-0 right-0 z-50 p-6 duration-500 ${
+      className={`transition-opacity fixed bottom-0 left-0 z-50 p-6 duration-500 ${
         visible ? 'opacity-50 hover:opacity-100 cursor-pointer' : 'opacity-0'
       }`}
     >
