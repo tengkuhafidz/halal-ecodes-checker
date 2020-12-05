@@ -3,7 +3,7 @@ import { FeedbackFish } from '@feedback-fish/react'
 
 const Footer: React.FC = () => (
   <div className="text-center text-gray-600 mt-24">
-    <FeedbackFish projectId="ec36509458fc48">
+    <FeedbackFish projectId={process.env.GATSBY_FEEDBACK_FISH}>
       <button className="underline mb-4">Have a feeback? Let us know!</button>
     </FeedbackFish>
     <p>
