@@ -19,6 +19,7 @@
   "dependencies": {
     "@feedback-fish/react": "^1.2.1",
     "@fortawesome/fontawesome-free": "^5.14.0",
+    "@isamrish/gatsby-plugin-google-adsense": "^1.2.0",
     "fuse.js": "^6.4.1",
     "gatsby": "^2.21.0",
     "gatsby-plugin-google-gtag": "^2.1.11",
