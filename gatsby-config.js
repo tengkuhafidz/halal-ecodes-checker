@@ -54,5 +54,11 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-google-adsense`,
+      options: {
+        publisherId: process.env.GATSBY_ADSENSE_ID
+      },
+    },
   ],
 }
